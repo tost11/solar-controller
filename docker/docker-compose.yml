@@ -1,0 +1,18 @@
+version: "3"
+services:
+  solar-db:
+    container_name: "solar-db"
+    image: mongo:3.2.4
+    volumes:
+      - "/my/database/path/:/data/db"
+  solar-backend:
+    container_name: "solar-backend"
+    image: openjdk:11
+    volumes:
+      - "../backend/target/:/dist"
+      - "../backend/config_its/:/res"
+      - "../solar-frontend/build/:/res/public"
+    command: java -jar /dist/backend-0.0.1-SNAPSHOT.jar
+    working_dir: /res
+    ports:
+      - "127.0.0.1:8080:8080"

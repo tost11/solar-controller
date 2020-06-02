@@ -1,0 +1,9 @@
+version: "3"
+services:
+  solar-db:
+    container_name: "solar-db"
+    image: mongo:3.2.4
+    ports:
+      - "27017:27017"
+    volumes:
+      - "/my/test/data/path/:/data/db"
