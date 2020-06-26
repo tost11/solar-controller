@@ -28,5 +28,7 @@ java open-jdk 11 or later, python3, react
 |view.max-year-consumed-watt-hours|max load watt on year graph|200|
 
 ## client
+The client uses python and modbus to read out the status of the solar-controller and sends the inforamation to the server (spring boot aplication).
+As hardware i use a raspberrypi with an RS485 Adapter us adapter.As software an installation of python3 and pymodbus is nessesary. Also you habe to change the url and token declared in post-data.py in the first lines. Most of the python code comes from [here](https://github.com/lewismoten/solar-log/tree/master/charge-controller). There are even more scripts for reading statistic-data and so on.
 
 ## images
