@@ -10,6 +10,15 @@ Example: [solar.tost-soft.de](https://solar.tost-soft.de)
 java open-jdk 11 or later, python3, react 
 
 ## setup
+To install the application check out the docker folder. To run the Server just execute these three scripts...
+```bash
+./build_backend.sh
+./build_frontend.sh
+docker-compose up -d
+```
+To acces the application configure the port and availability (localhost) in the docker-compose.yml or/and add a reverse proxy to the expost port.
+
+For the client run the *checkData.sh* script from the client folder. For more Infomation read the client section.
 
 ## config parameters
 |parameter|function|default value|
