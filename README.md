@@ -40,4 +40,11 @@ For the client run the *checkData.sh* script from the client folder. For more In
 The client uses python and modbus to read out the status of the solar-controller and sends the inforamation to the server (spring boot aplication).
 As hardware i use a raspberrypi with an RS485 Adapter us adapter.As software an installation of python3 and pymodbus is nessesary. Also you habe to change the url and token declared in post-data.py in the first lines. Most of the python code comes from [here](https://github.com/lewismoten/solar-log/tree/master/charge-controller). There are even more scripts for reading statistic-data and so on.
 
+### inverter
+Also there is a [script](client/check_inverter.py) to read out an EPEver inverter.
+
+Tested on IPower Series (IP1500-21).
+It doese **not** use the pymodbus library like the other script because the protocol doese not match the standart modbus function codes as i can see.
+But it seems to be a read registers on function code 67 on address 12552 (x3108) on unit 3. the result contains 22 byte of data
+
 ## images
